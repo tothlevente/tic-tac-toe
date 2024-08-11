@@ -45,9 +45,9 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
   let status;
 
   if (winner) {
-    status = "Winner: " + winner;
+    status = "Winner is: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "🍀" : "🍁");
+    status = "Next player is: " + (xIsNext ? "🍀" : "🍁");
   }
 
   return (

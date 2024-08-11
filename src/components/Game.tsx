@@ -23,7 +23,7 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = "Go to move #" + move;
+      description = "Go to move: " + move + ".";
     } else {
       description = "Go to game start";
     }
@@ -37,13 +37,15 @@ export default function Game() {
   });
 
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+    <>
+      <div className="game">
+        <div className="game-board">
+          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        </div>
       </div>
       <div className="game-info">
         <ol>{moves}</ol>
       </div>
-    </div>
+    </>
   );
 }
