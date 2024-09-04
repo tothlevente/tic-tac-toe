@@ -33,9 +33,9 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
     const nextSquares = squares.slice();
 
     if (xIsNext) {
-      nextSquares[i] = "🍀";
+      nextSquares[i] = "❎";
     } else {
-      nextSquares[i] = "🍁";
+      nextSquares[i] = "🔴";
     }
 
     onPlay(nextSquares);
@@ -47,7 +47,7 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
   if (winner) {
     status = "Winner is: " + winner;
   } else {
-    status = "Next player is: " + (xIsNext ? "🍀" : "🍁");
+    status = "Next player is: " + (xIsNext ? "❎" : "🔴");
   }
 
   return (
