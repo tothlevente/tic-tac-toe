@@ -1,4 +1,4 @@
 export default interface SquareProps {
-  value: any;
-  onSquareClick: any;
+  value: Array<number>;
+  onSquareClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }

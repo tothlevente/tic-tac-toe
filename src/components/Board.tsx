@@ -24,7 +24,13 @@ function calculateWinner(squares: Array<number>) {
   return null;
 }
 
-export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
+export default function Board({
+  xIsNext,
+  squares,
+  onPlay,
+  firstCharacter,
+  secondCharacter,
+}: BoardProps) {
   function handleClick(i: number) {
     if (calculateWinner(squares) || squares[i]) {
       return;
@@ -33,9 +39,9 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
     const nextSquares = squares.slice();
 
     if (xIsNext) {
-      nextSquares[i] = "❎";
+      nextSquares[i] = firstCharacter;
     } else {
-      nextSquares[i] = "🔴";
+      nextSquares[i] = secondCharacter;
     }
 
     onPlay(nextSquares);
@@ -47,7 +53,7 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
   if (winner) {
     status = "Winner is: " + winner;
   } else {
-    status = "Next player is: " + (xIsNext ? "❎" : "🔴");
+    status = "Next player is: " + (xIsNext ? firstCharacter : secondCharacter);
   }
 
   return (

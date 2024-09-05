@@ -1,9 +1,10 @@
 import SquareProps from "../interfaces/SquareProps";
+import GameProps from "../interfaces/GameProps";
 import Board from "./Board";
 
 import { useState } from "react";
 
-export default function Game() {
+export default function Game({ firstCharacter, secondCharacter }: GameProps) {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
 
@@ -43,7 +44,13 @@ export default function Game() {
     <>
       <div className="game">
         <div className="game-board">
-          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+          <Board
+            xIsNext={xIsNext}
+            squares={currentSquares}
+            onPlay={handlePlay}
+            firstCharacter={firstCharacter}
+            secondCharacter={secondCharacter}
+          />
         </div>
       </div>
       <div className="game-info">
