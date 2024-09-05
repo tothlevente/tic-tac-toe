@@ -35,8 +35,9 @@ Your app is ready to be deployed!
 
 ## Used external sources:
 
-- [React (Tutorial: Tic-Tac-Toe)](https://react.dev/learn/tutorial-tic-tac-toe)
+- [Material UI](https://mui.com/material-ui/)
 - [Bootstrap Icons](https://icons.getbootstrap.com)
+- [React (Tutorial: Tic-Tac-Toe)](https://react.dev/learn/tutorial-tic-tac-toe)
 
 ## Learn more:
 
